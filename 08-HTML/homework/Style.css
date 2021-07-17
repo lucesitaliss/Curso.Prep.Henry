@@ -1,0 +1,22 @@
+
+h1{
+  color:rgb(111, 0, 255);  
+}
+img{
+    width: 400px;
+}
+#thirdDiv{
+    height: 600px;
+    width: 500px;
+    background-color: rgb(202, 199, 199);
+    padding: 50px;
+    border: 20px dashed rgb(88, 64, 64);
+    /* solid y dotted */
+}
+#spanId{
+    font-size: 18px;
+    margin: 50px;
+}
+li{
+    list-style:none; 
+}
