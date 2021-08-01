@@ -1,5 +1,7 @@
 // No cambies los nombres de las funciones.
 
+const { TestWatcher } = require("jest");
+
 function deObjetoAmatriz(objeto){
   // Escribe una función que convierta un objeto en una matriz, donde cada elemento representa 
   // un par clave-valor en forma de matriz.
@@ -10,6 +12,10 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+
+ var claveVaror =Object.entries(objeto);
+ return claveVaror;
+
 }
 
 
@@ -18,6 +24,16 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  //Lissette
+  var objetoSTR={};
+ for (i=0;i<string.length;i++){
+    if (!objetoSTR[string[i]]){
+      objetoSTR[string[i]]=0;
+      }
+      objetoSTR[string[i]]++;        
+    }
+    
+    return objetoSTR;
 }
 
 
@@ -26,6 +42,17 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var MAY="";
+  var min="";
+  for (i=0;i<s.length;i++){
+    if (s[i]===s[i].toUpperCase()){
+      MAY+=s[i];
+    }
+    if (s[i]===s[i].toLowerCase()){
+      min+=s[i];
+    }
+  }
+  return MAY+min;
 }
 
 
@@ -35,7 +62,12 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-} 
+ /*  hola soy lissette
+  lissette soy hola
+  ettessil yos aloh
+  
+  aloh yos ettessil */
+ } 
 
 
 function capicua(numero){

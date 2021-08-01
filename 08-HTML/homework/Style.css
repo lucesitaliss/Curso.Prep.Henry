@@ -1,6 +1,10 @@
 
 h1{
+  position: fixed;  
+  top: 10px;
+  right: 10px;
   color:rgb(111, 0, 255);  
+
 }
 img{
     width: 400px;
@@ -20,3 +24,7 @@ img{
 li{
     list-style:none; 
 }
+ #espejo{
+  display: flex; 
+  flex-direction:row-reverse; 
+ }
