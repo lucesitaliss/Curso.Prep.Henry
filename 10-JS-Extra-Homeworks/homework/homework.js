@@ -26,7 +26,7 @@ function numberOfCharacters(string) {
   //Escribe tu código aquí
   //Lissette
   var objetoSTR={};
- for (i=0;i<string.length;i++){
+ for (var i=0;i<string.length;i++){
     if (!objetoSTR[string[i]]){
       objetoSTR[string[i]]=0;
       }
@@ -62,12 +62,14 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
- /*  hola soy lissette
-  lissette soy hola
-  ettessil yos aloh
-  
-  aloh yos ettessil */
- } 
+  var arraystr=[];
+  arraystr=str.split(" ");
+  var mirror="";
+  for (var i=0 ;i<arraystr.length; i++){
+       mirror+=arraystr[i].split("").reverse("").join("")+" ";
+    }
+  return mirror.slice(0,mirror.length-1);
+  } 
 
 
 function capicua(numero){
@@ -75,6 +77,16 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  var str=numero.toString();
+  var mirror="";
+  for (var i=0;i<str.length;i++){
+    mirror=str[i]+mirror;
+  }
+  if (mirror==numero){
+    return "Es capicua";
+  }
+  return "No es capicua";
+return mirror;
 }
 
 
@@ -82,6 +94,13 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  var newcadena="";
+  for (var i=0;i<cadena.length;i++){
+    if (cadena[i]!="a"&cadena[i]!="b"&cadena[i]!="c"){
+      newcadena+=cadena[i];    
+    }
+  }
+  return newcadena;
 }
 
 
@@ -89,6 +108,16 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+//  ["ejempplo","de","arreglo"]
+
+//  ["de","ejemplo","arreglo"]
+// arr.sort(function(a, b){
+//   // ASC  -> a.length - b.length
+//   // DESC -> b.length - a.length
+//   return b.length - a.length;
+// });
+  arr.sort(function(a,b){return a.length - b.length});
+  return arr;
 }
 
 
@@ -98,6 +127,26 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
+  //arreglo1 [1,2,3] lengt=3
+  //arreglo2 [2,3,8,9,10] lengt=5
+  
+    var mayor=[];
+    varmenor=[];
+    if (arreglo1.length > arreglo2.length){
+    mayor= arreglo1;
+    menor=arreglo2;
+     }
+    mayor= arreglo2;
+    menor=arreglo1;
+    var inteserccion=[];
+  for (var i=0;i<mayor.length;i++){
+    for(var j=0;j<menor.length;j++){
+      if (mayor[i]==menor[j]){
+        inteserccion.push(mayor[i]);
+      }
+    }
+  }
+  return inteserccion;
 }
 
 
